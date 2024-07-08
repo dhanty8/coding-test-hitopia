@@ -1,0 +1,24 @@
+## Balanced Brackets Algorithm
+
+This algorithm determines whether a string of brackets is balanced. It supports the following bracket types: `()`, `[]`, and `{}`. The algorithm ignores whitespace characters.
+
+### Algorithm
+
+1. Initialize an empty stack.
+2. Traverse each character in the input string.
+3. If the character is an opening bracket (`{`, `[`, `(`), push it onto the stack.
+4. If the character is a closing bracket (`}`, `]`, `)`), check if the stack is not empty and if the top of the stack is the matching opening bracket. If so, pop the stack. Otherwise, the string is not balanced.
+5. After traversing all characters, if the stack is empty, the string is balanced. Otherwise, it is not.
+
+### Complexity Analysis
+
+- **Time Complexity:** \(O(n)\), where \(n\) is the length of the input string. Each character is processed exactly once.
+- **Space Complexity:** \(O(n)\) in the worst case, where all characters in the string are opening brackets.
+
+### Example Usage
+
+```javascript
+console.log(isBalancedBrackets("{ [ ( ) ] }")); // Output: YES
+console.log(isBalancedBrackets("{ [ ( ] ) }")); // Output: NO
+console.log(isBalancedBrackets("{ ( ( [ ] ) [ ] ) [ ] }")); // Output: YES
+```
